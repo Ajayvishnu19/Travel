@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        form{
+        text-align:center;
+        border:3px solid #f1f1f1;
+        border-radius:10px;
+        }
+        div .nme,.usernme,.email,.pswd,.rpswd,.btn reg{
+        margin-bottom:10px;
+        }
+    </style>
+</head>
+<body>
+<form action="register" method="post">
+    {% csrf_token %}
+    <div class="container-fluid">
+        <div><h2><b>REGISTER</b></h2>
+        <p>Please fill in this form to create an account.</p>A
+        </div>
+        <div class="nm"><label><b>Name</b></label></div>
+        <div class="nme"><input type="text" name="name" placeholder="Enter your name" required></div>
+        <div class="usernm"><label><b>Username</b></label></div>
+        <div class="usernme"><input type="text" name="username" placeholder="Enter username" required></div>
+        <div class="eml"><label><b>Email</b></label></div>
+        <div class="email"><input type="text" name="email" placeholder="Enter email" required></div>
+        <div class="psw"><label><b>Password</b></label></div>
+        <div class="pswd"><input type="password" name="password" placeholder="Enter Password" required></div>
+        <div class="rpsw"><label><b>Confirm Password</b></label></div>
+        <div class="rpswd"><input type="password" name="password1" placeholder="Confirm Password" required></div>
+        <div class="btn reg"><button type="submit" style="background-color:lightblue">Register</button> </div>
+    </div>
+</form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>

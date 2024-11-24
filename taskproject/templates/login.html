@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        form{
+        text-align:center;
+        border:3px solid #f1f1f1;
+        border-radius:10px;
+        }
+        div .usrnme,.psw,.sign{
+        margin-bottom:10px;
+        }
+    </style>
+</head>
+<body>
+<form action="login"  method="post">
+    {% csrf_token %}
+  <h2 style="text-align:center">Log in</h2>
+  <div class="container-fluid">
+    <div class="usnm"><label><b>Username</b></label></div>
+    <div class="usrnme"><input type="text" name="username" placeholder="Enter username"></div>
+      <div class="ps"><label><b>Password</b></label></div>
+    <div class="psw"><input type="password" name="password" placeholder="Enter Password"></div>
+    <div class="sign"><button type="submit" style="color:white;background-color:green;text-align:center">Log In</button> </div>
+  </div>
+</form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>
